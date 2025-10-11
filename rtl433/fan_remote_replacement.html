@@ -1,0 +1,31 @@
+<html>
+<head>
+<link rel="stylesheet" href="../vonahsen.css" />
+</head>
+<body>
+<div class="content">
+<h1>Replacing a cheap fan remote with an SDR setup</h1>
+<p>When my wife and I replaced our ceiling fans, most manufacturers have moved to built-in LED lights
+and replacing pull chains with wireless remotes.  I had previously been using smart bulbs to tie into HomeAssistant,
+but built-in LEDs means I can't use smart bulbs or add an intermediate smart dongle of some type.</p>
+
+<p>Surely, I thought, these use extremely common radios, and someone has already figured this out.  One fan's remote
+had an FCC sticker, 2A9T3-RF601A.  Looking up this ID on either <a href="https://fcc.report/FCC-ID/2A9T3-RF601A">FCC Report</a> 
+or <a href="https://fccid.io/2A9T3-RF601A">FCCID.io</a>, shows that it uses the very common 433.92 frequency.</p>
+
+<p>Grabbing my Flipper Zero, I was able to record both the &quot;light on&quot; and &quot;light off&quot; signals, and after replaying the saved .sub file, the lights responded appropriately.  This is what the Flipper <a href="fan1.sub">.sub</a> file looks like:
+<br/>
+<code>
+Filetype: Flipper SubGhz RAW File<br/>
+Version: 1<br/>
+Frequency: 433920000<br/>
+Preset: FuriHalSubGhzPresetOok650Async<br/>
+Protocol: RAW<br/>
+RAW_Data: 3151 -132 7887 -66 1569 -98 13023 -66 35921 -98 4253 -66 2795 -98 42771 -98 5837 -98 34399 -17754 199 -692 895 -132 825 -198 29895 -68 1195 -66 3513 -134 6479 -66 4663 -130 20353 -100 6125 -66 4615 -98 4607 -66 6153 -100 23729 -66 44607 -98 9973 -100 1249 -66 3589 -66 9871 -100 20069 -66 799 -17966 99 -896 131 -528 459 -524 99 -490 163 -100 1057 -66 33981 -100 2887 -68 5917 -66 5717 -98 10583 -66 3747 -100 12477 -66 963 -66 3905 -66 9493 -66 6579 -66 2251 -17848 99 -496 233 -330 233 -266 133 -66 529 -266 827 -66 199 -66 28523 -66 11221 -894 313 -924 263 -940 275 -926 263 -940 277 -894 295 -906 313 -894 293 -904 313 
+<br/>
+======>% SNIP %<======<br/>
+</code>
+</p> 
+</div>
+</body>
+</html>
