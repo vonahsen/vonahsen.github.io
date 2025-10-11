@@ -3,6 +3,15 @@ body {
 	background-color:darkred;	
 	font-family: Arial, Helvetica, Verdana, sans-serif
 }
+code {
+  display:block;
+  font-family: monospace,Consolas,"courier new";
+  color: crimson;
+  background-color: #ddd;
+  padding: 2px;
+  margin: 5px;
+  font-size: 105%;
+}
 .topnavout { background-color:#FF6600; color:#FFFFFF; }
 .topnavout A:link { color:#FFFFFF; }
 .topnavout A:hover { color:#FFFFFF; }
@@ -13,10 +22,11 @@ body {
 .topnavover A:hover { color:#000000; }
 .topnavover A:visited { color:#000000; }
 
-.contentbody { 
-	width:600px; 
+.content,.contentbody { 
+	width:60%;
+	margin:auto;
 	background-color:white; 
-	padding: 5px 5px 5px 5px; 
+	padding: 5px;
 	border-style:double; 
 	border-color: black; 
 }
