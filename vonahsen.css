@@ -12,6 +12,14 @@ code {
   margin: 5px;
   font-size: 105%;
 }
+code.terminal {
+	background-color:#222;
+	color: #eee;
+	padding:5px;
+}
+code.inline {
+  display:inline;
+}
 .topnavout { background-color:#FF6600; color:#FFFFFF; }
 .topnavout A:link { color:#FFFFFF; }
 .topnavout A:hover { color:#FFFFFF; }

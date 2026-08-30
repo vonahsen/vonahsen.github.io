@@ -1,0 +1,23 @@
+<html>
+<head>
+<link rel="stylesheet" href="../vonahsen.css" />
+</head>
+<body>
+<div class="content">
+<h1>Setting up a Raspberry Pi4B to test 433 MHz SDR</h1>
+
+<img src="pinoutcli.png"/>
+https://pi.pinout.xyz/
+
+<code class="terminal">
+~# rtl_433<br/>
+rtl_433 version 25.02 (2025-02-19) inputs file rtl_tcp RTL-SDR SoapySDR<br/>
+[SDR] No supported devices found.<br/>
+~# 
+</code>
+
+<p>Everything says to use <a href="https://pypi.org/project/rpi-rf/">RPi RF</a>, but 
+it uses RPi.GPIO and not the newer lgpio, doesn't seem to work with newer releases like trixie.</p>
+</div>
+</body>
+</html>
