@@ -8,17 +8,17 @@
 <h1>FriendlyElec NanoPi R28S</h1>
 
 <p>
-CNX software brought to my attention the <a href="https://www.cnx-software.com/2026/07/31/nanopi-r28s-a-tiny-dual-gbe-rockchip-rk3528a-wireless-sbc-and-router-with-a-usb-c-console-port/">NanoPi R28S - A tiny dual GbE Rockchip RK3528A wireless SBC and router with a USB-C console port</a>.
+CNX software brought to the <a href="https://www.cnx-software.com/2026/07/31/nanopi-r28s-a-tiny-dual-gbe-rockchip-rk3528a-wireless-sbc-and-router-with-a-usb-c-console-port/">NanoPi R28S</a> to my attntion - A tiny dual GbE Rockchip RK3528A wireless SBC and router with a USB-C console port.
 </p>
 
-<p>At 49.5x49.5x24mm (that's roughly 2x2x1 inches in freedom units), this should make an <em>excellent</em> travel router, so I rodered one.</p>
+<p>At 49.5x49.5x24mm (that's roughly 2&quot;x2&quot;x1&quot; in freedom units), this should make an <em>excellent</em> travel router, so I rodered one.</p>
 <img src="R28S_05-crop.jpg" />
 <p/>
 
 <p>
 The <a href="https://www.friendlyelec.com/index.php?route=product/product&product_id=320">FriendlyElec NanoPi R28S</a>
 is <em>&quot;a compact development board with dual Gigabit Ethernet ports and integrated Wifi and bluetooth... us[ing] 
-a Rockchip RK3538 CPU with 1GB LPDDR4x RAM, and supports an optional eMMC module.&quot;</em>
+a RK3538 CPU with 1GB LPDDR4x RAM, and supports an optional eMMC module.&quot;</em>
 </p>
 
 
@@ -28,7 +28,7 @@ This is new hardware, so I'm not optimistic that it's well documented.  Let's st
 </p>
 
 <p>
-I'm pretty sure I ordered the eMMC, and I'm a debian guy, so we'll look for that image file, and <code class="inline">dd</code> to an sdcard.  Browsing the wiki, and the google drive, the naming conventions are all over the place, and there aren't always entries for the new R28S chip.  Oh goodie.
+I'm pretty sure I ordered the eMMC, and I'm a debian guy, so we'll look for that image file, and <code class="inline">dd</code> to an sdcard.  Browsing the wiki, and the google drive, the file naming conventions are all over the place, and there aren't always entries for the new R28S model.  Oh goodie.
 </p>
 
 <p>The webpage at least shows the product name (R28S), and the img file has the chip name (rk3528-eflasher-debian-trixie-core-6.1-arm64-20260729.img), so let's have faith.</p>
@@ -45,7 +45,7 @@ I'm pretty sure I ordered the eMMC, and I'm a debian guy, so we'll look for that
 
 <p>Okay, I'll use my USB-C PD 5k monitor.  Since there are only 2 output options on the thing (USB-C and USB-C debug), I'll hope they spent the extra 12 cents on a &quot;real&quot; full-featured USB-C controller.   Nope.</p>
 
-<p>So the USB-C must just be power and data, grabbing my powered HDMI USB hub/splitter thing, I'll assume that HDMI will just work.   And that's met with another failure.  The monitor blinks like it detected a device, but no signal.
+<p>So the USB-C must just be power and data - grabbing my powered HDMI USB hub/splitter thing, I'll assume that HDMI will just work.   And that's met with another failure.  The monitor blinks like it detected a device, but no signal.
 </p>
 
 
@@ -80,54 +80,65 @@ success, so remove the sdcard and REBOOT!</p>
 
 <p>Encouraging!  A DHCP request:</p>
 <code class="terminal">
-2026-08-30T00:14:38.389898-05:00 dhcpd[125001]: DHCPREQUEST for 192.168.1.172 from d4:e9:f4:eb:81:7c (esp32-EB817C) via enp6s0<br/>
-2026-08-30T00:14:38.393854-05:00 dhcpd[125001]: DHCPACK on 192.168.1.172 to d4:e9:f4:eb:81:7c (esp32-EB817C) via enp6s0<br/>
+2026-08-30T12:21:11.616904-05:00 dhcpd[125001]: DHCPOFFER on 192.168.2.158 to 4e:42:9f:98:fb:ff (NanoPi-R28S) via enp3s0
+2026-08-30T12:21:11.617248-05:00 dhcpd[125001]: DHCPREQUEST for 192.168.2.158 (192.168.2.1) from 4e:42:9f:98:fb:ff (NanoPi-R28S) via enp3s0
 </code>
 
-<p>NMAP is less encouraging:</p>
+<p>SSH is successful:</p>
 <code class="terminal">
-# nmap 192.168.1.172<br/>
-Starting Nmap 7.99 ( https://nmap.org ) at 2026-08-30 12:27 -0500<br/>
-Nmap scan report for 192.168.1.172<br/>
-Host is up (0.039s latency).<br/>
-All 1000 scanned ports on 192.168.1.172 are in ignored states.<br/>
-Not shown: 1000 closed tcp ports (reset)<br/>
-MAC Address: D4:E9:F4:EB:81:7C (Espressif)<br/>
+$ ssh -opubkeyauthentication=no -p22 192.168.2.158 -lpi<br/>
+The authenticity of host '192.168.2.158 (192.168.2.158)' can't be established.<br/>
+ED25519 key fingerprint is: SHA256:/T1W4j5/sxISRpRgp6reTEyoqebd5MrY6pkIPnRztY0<br/>
+This key is not known by any other names.<br/>
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes<br/>
+Warning: Permanently added '192.168.2.158' (ED25519) to the list of known hosts.<br/>
+pi@192.168.2.158's password: <br/>
+Linux NanoPi-R28S 6.1.141 #52 SMP Tue Jul 28 18:10:36 CST 2026 aarch64<br/>
 <br/>
-Nmap done: 1 IP address (1 host up) scanned in 8.89 seconds<br/>
-</code>
-
-<p>And ssh confirms:</p>
-<code class="terminal">
-$ ssh -opubkeyauthentication=no -p22 -l pi 192.168.1.172<br/>
-ssh: connect to host 192.168.1.172 port 22: Connection refused<br/>
-</code>
-
-<p>I mentally flagged on hostname 'esp32-EB817C', but I do have a lot of IoT crap, let's scan the LAN for ssh.  This finds an interesting one:</p>
-<code class="terminal">
-# nmap -p 22 192.168.1.0/24<br/>
-=====>% SNIP %<=====<br/>
-Nmap scan report for 192.168.1.205<br/>
-Host is up (1.8s latency).<br/>
+The programs included with the Debian GNU/Linux system are free software;<br/>
+the exact distribution terms for each program are described in the<br/>
+individual files in /usr/share/doc/*/copyright.<br/>
 <br/>
-PORT   STATE    SERVICE<br/>
-22/tcp filtered ssh<br/>
-MAC Address: 14:AC:60:48:8A:F9 (Cloud Network Technology Singapore PTE.)<br/>
+Debian GNU/Linux comes with ABSOLUTELY NO WARRANTY, to the extent<br/>
+permitted by applicable law.<br/>
+pi@NanoPi-R28S:~$ <br/>
 </code>
-</p>
 
-<p>SSH fails for the default-ish login options, but timeout is NOT refused.  Progress!</p>
+<p>A quick scan of the hardware:</p>
 <code class="terminal">
-$ ssh -opubkeyauthentication=no -p22 192.168.1.205 -lpi<br/>
-ssh: connect to host 192.168.1.205 port 22: Connection timed out<br/>
-$ ssh -opubkeyauthentication=no -p22 192.168.1.205 -lroot<br/>
-ssh: connect to host 192.168.1.205 port 22: Connection timed out<br/>
-</code>
-
-<p>A lot of progress, but at this point, I'm bored and frustrated, so we'll pause for a mental refresh.
-Progress summary: the sdcard is removed, and <em>something</em> is booting, but I'm not sure what.  The red LED is slow flashing, which
-the wiki says means &quot;Installation Done&quot;, but rebooting again doesn't change the blink pattern.</p>
-
+pi@NanoPi-R28S:~$ uname -a<br/>
+Linux NanoPi-R28S 6.1.141 #52 SMP Tue Jul 28 18:10:36 CST 2026 aarch64 GNU/Linux<br/>
+pi@NanoPi-R28S:~$ free -m<br/>
+               total        used        free      shared  buff/cache   available<br/>
+Mem:             964         269         486          20         344         695<br/>
+Swap:              0           0           0<br/>
+pi@NanoPi-R28S:~$ df -h<br/>
+Filesystem      Size  Used Avail Use% Mounted on<br/>
+udev            467M     0  467M   0% /dev<br/>
+tmpfs            97M  1.4M   96M   2% /run<br/>
+overlay         229G  113M  217G   1% /<br/>
+tmpfs           483M     0  483M   0% /dev/shm<br/>
+tmpfs           5.0M  8.0K  5.0M   1% /run/lock<br/>
+tmpfs           483M     0  483M   0% /tmp<br/>
+tmpfs            97M  8.0K   97M   1% /run/user/1000<br/>
+pi@NanoPi-R28S:~$ ip a s<br/>
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000<br/>
+    link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00<br/>
+    inet 127.0.0.1/8 scope host lo<br/>
+       valid_lft forever preferred_lft forever<br/>
+    inet6 ::1/128 scope host noprefixroute <br/>
+       valid_lft forever preferred_lft forever<br/>
+2: eth0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state UP group default qlen 1000<br/>
+    link/ether 4e:42:9f:98:fb:ff brd ff:ff:ff:ff:ff:ff<br/>
+    inet 192.168.2.158/24 brd 192.168.2.255 scope global dynamic noprefixroute eth0<br/>
+       valid_lft 2013sec preferred_lft 2013sec<br/>
+    inet6 fe80::83b6:445f:22aa:814d/64 scope link noprefixroute <br/>
+       valid_lft forever preferred_lft forever<br/>
+3: eth1: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN group default qlen 1000<br/>
+    link/ether 52:42:9f:98:fb:ff brd ff:ff:ff:ff:ff:ff<br/>
+4: wlan0: <NO-CARRIER,BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq state DORMANT group default qlen 1000<br/>
+    link/ether 54:01:4a:50:1a:de brd ff:ff:ff:ff:ff:ff<br/>
+<br/>
 </div>
 </body>
 </html>
