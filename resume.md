@@ -55,6 +55,7 @@ March 2025 - Present
 * Enhanced core PPP tooling to automate permissions, UI and performance improvements and architecture improvement.  Identified and remediated a LARGE backlog of technical debt and developed a road map for remediation.
 
 _Data Center Capacity Engineer_
+
 July 2022 - March 2025
 
 * Added new data elements to exports from the primary workflow tool,  making it easier to investigate contributing factors for missed SLA for ops reviews.
@@ -74,6 +75,7 @@ July 2022 - March 2025
 * Global capacity POC for the arches SCORE! program, partnering with ACLEs and other platform POCs to define the new global POC model
 
 _Data Center Systems Engineer_
+
 May 2021 - July 2022
 
 * Collaborated with hardware failure teams on a novel system on chip bug, doing impact analysis, providing feedback from the DCs and the repairs techs, and running the intel crash dump analyzers while the primary engineer was on PTO
@@ -85,6 +87,7 @@ May 2021 - July 2022
 * moved classifier and escalator logging to scuba, rather than printing to standard out, reducing memory usage and making the tool more easily tested
 
 _Engineering Specialist - Operations Analytics_
+
 August 2019 - April 2021
 
 * Redeveloped the right Operations metrics and definitions of success to drive quality, efficiency, cost, and timeliness.
@@ -105,6 +108,7 @@ August 2019 - April 2021
 * Built cross-functional relationships and influenced policies and procedures to improve global data center operations.
 
 _Data Center Production Operations Engineer_
+
 September 2015 - August 2019
 
 * Acted as a preventative maintenance SME to identify best practices and coordinated with SMEs from other data centers, leading to global infra changes and standardization. Created one voice to speak to tier and service owners about expectations from the data center side.  Visited data center regions to describe the new standards and solicit feedback.
@@ -176,6 +180,7 @@ January 2008-May 2012
 * Assisted co-workers with finding, correcting and preventing web site vulnerabilities, provided advanced programming and debugging support
 
 _System Administrator_
+
 April 2003-May 2012
 
 * Installed, secured, and maintained Xen, Red Hat Linux, Windows 2003 and Windows 2008 servers
@@ -184,6 +189,7 @@ April 2003-May 2012
 * Supported 25 employees and desktops
 
 _Web Developer_
+
 April 2003-May 2012
 
 * Developed dynamic web pages using PHP, MySQL, VBScript/ASP, and MS SQL Server
