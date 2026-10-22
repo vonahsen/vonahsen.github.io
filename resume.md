@@ -172,7 +172,7 @@ January 2008 - May 2014
 
 _Information System Security Manager_
 
-January 2008-May 2012
+January 2008 - May 2012
 
 * Lead ISO 27001 certification initiative
 * Worked with business units and process owners to develop security policies and technical procedures, then initiated and enforced them
@@ -181,7 +181,7 @@ January 2008-May 2012
 
 _System Administrator_
 
-April 2003-May 2012
+April 2003 - May 2012
 
 * Installed, secured, and maintained Xen, Red Hat Linux, Windows 2003 and Windows 2008 servers
 * Installed, secured, and maintained MySQL and MS SQL 2005 servers, databases, users and access rights.
@@ -190,7 +190,7 @@ April 2003-May 2012
 
 _Web Developer_
 
-April 2003-May 2012
+April 2003 - May 2012
 
 * Developed dynamic web pages using PHP, MySQL, VBScript/ASP, and MS SQL Server
 * Built, maintained and ran data processing pipelines and ETL jobs using MySQL, PHP, bash, MS SQL DTS, SQL Server Integration Services and foxpro
