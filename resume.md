@@ -1,5 +1,5 @@
 # Barry Von Ahsen
-* 'resume@vonahsen.com
+* resume at vonahsen dot com
 * linkedin.com/in/vonahsen
 * github.com/vonahsen
 
