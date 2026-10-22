@@ -1,5 +1,5 @@
 # Barry Von Ahsen
-* resume@vonahsen.com
+* 'resume@vonahsen.com
 * linkedin.com/in/vonahsen
 * github.com/vonahsen
 
@@ -29,8 +29,11 @@
 
 ---
 ## Meta/Facebook
-### Altoona, Iowa
+
+**Altoona, Iowa**
+
 _Production Systems Engineer_
+
 March 2025 - Present
 
 * Build the test tools and automation frameworks to optimize development, integration, deployment and lifecycle management of hardware Systems in Meta Labs and Data Centers
@@ -129,8 +132,11 @@ September 2015 - August 2019
 
 ---
 ## Businessolver.com Inc
-### West Des Moines, Iowa
+
+**West Des Moines, Iowa**
+
 _System Administrator_
+
 May 2012 - September 2015
 
 * Installed, secured, and maintained VMWare ESX, CentOS and Windows 2008R2 servers in 5 data centers
@@ -143,8 +149,11 @@ May 2012 - September 2015
 
 ---
 ## Des Moines Area Community College
-### Ankeny, Iowa
+
+**Ankeny, Iowa**
+
 _Adjunct Professor_
+
 January 2008 - May 2014
 
 * WDV 441: Advanced PHP
@@ -154,8 +163,11 @@ January 2008 - May 2014
 
 ---
 ## Visionary Services Inc
-### Des Moines, Iowa
+
+**Des Moines, Iowa**
+
 _Information System Security Manager_
+
 January 2008-May 2012
 
 * Lead ISO 27001 certification initiative
@@ -182,8 +194,11 @@ April 2003-May 2012
 
 ---
 ## Captain Jack Communications
-### Ankeny, Iowa
+
+**Ankeny, Iowa**
+
 _Web Developer, Asst. System Administrator_
+
 August 2001 - April 2003
 
 * Installed, configured, maintained Windows NT4, 2000, and Red Hat Linux web servers
